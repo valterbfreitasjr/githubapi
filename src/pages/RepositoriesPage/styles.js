@@ -17,7 +17,7 @@ export const Sidebar = styled.aside`
 `;
 
 export const Main = styled.section`
-  background: ${(props) => props.theme.colors.cpmta};
+  background: ${(props) => props.theme.colors.carbonDark};
   width: 100%;
   flex: 100%;
   padding: 40px;

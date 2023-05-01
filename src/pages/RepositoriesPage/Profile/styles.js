@@ -30,14 +30,32 @@ export const Avatar = styled.img`
 `;
 
 export const Login = styled.h1`
-  font-size: ${(props) => props.theme.fontSize.title};
+  font-size: ${(props) => props.theme.fontSizes.title};
 `;
 
 export const Name = styled.h1`
-  font-size: ${(props) => props.theme.fontSize.subtitle};
+  font-size: ${(props) => props.theme.fontSizes.subtitle};
   font-weight: normal;
 
   @media screen and (max-width: ${(props) => props.theme.breakpoints.md}) {
     display: none;
   } ;
+`;
+
+export const Inner = styled.div`
+  padding: 1rem;
+
+  @media screen and (max-width: ${(props) => props.theme.breakpoints.md}) {
+    display: none;
+  }
+`;
+
+export const Data = styled.p`
+  display: flex;
+  align-items: center;
+  line-height: 1.5rem;
+
+  svg {
+    margin-right: 10px;
+  }
 `;

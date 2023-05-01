@@ -1,16 +1,21 @@
 import React from 'react';
 
 import Profile from './Profile';
+import Filter from './Filter';
+import Repositories from './Repositories';
 
 import { Container, Sidebar, Main } from './styles';
 
-const RepositoriesPage = () => {
+const RepositoriesPage = () => (
   <Container>
     <Sidebar>
       <Profile />
+      <Filter />
     </Sidebar>
-    <Main>Main</Main>
-  </Container>;
-};
+    <Main>
+      <Repositories />
+    </Main>
+  </Container>
+);
 
 export default RepositoriesPage;
