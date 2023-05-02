@@ -18,6 +18,45 @@ const RepositoriesPage = () => {
     location: 'Santo Anastácio - SP',
   };
 
+  const repositories = [
+    {
+      name: 'Repositorie 1',
+      description: 'Descrição',
+      html_url: 'https://devjuninho.com.br',
+      language: 'JavaScript',
+    },
+    {
+      name: 'Repositorie 1',
+      description: 'Descrição',
+      html_url: 'https://devjuninho.com.br',
+      language: 'PHP',
+    },
+    {
+      name: 'Repositorie 1',
+      description: 'Descrição',
+      html_url: 'https://devjuninho.com.br',
+      language: 'C#',
+    },
+    {
+      name: 'Repositorie 1',
+      description: 'Descrição',
+      html_url: 'https://devjuninho.com.br',
+      language: 'Java',
+    },
+    {
+      name: 'Repositorie 1',
+      description: 'Descrição',
+      html_url: 'https://devjuninho.com.br',
+      language: 'Ruby',
+    },
+    {
+      name: 'Repositorie 1',
+      description: 'Descrição',
+      html_url: 'https://devjuninho.com.br',
+      language: 'Node.Js',
+    },
+  ];
+
   return (
     <Container>
       <Sidebar>
