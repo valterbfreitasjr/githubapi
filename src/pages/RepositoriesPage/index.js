@@ -6,6 +6,8 @@ import Repositories from './Repositories';
 
 import { Container, Sidebar, Main } from './styles';
 
+import { getLangsFrom } from '../../services/api';
+
 const RepositoriesPage = () => {
   const user = {
     login: 'valterbfreitasjr',
@@ -26,42 +28,50 @@ const RepositoriesPage = () => {
       language: 'JavaScript',
     },
     {
-      name: 'Repositorie 1',
+      name: 'Repositorie 2',
       description: 'Descrição',
       html_url: 'https://devjuninho.com.br',
       language: 'PHP',
     },
     {
-      name: 'Repositorie 1',
+      name: 'Repositorie 3',
       description: 'Descrição',
       html_url: 'https://devjuninho.com.br',
       language: 'C#',
     },
     {
-      name: 'Repositorie 1',
+      name: 'Repositorie 4',
       description: 'Descrição',
       html_url: 'https://devjuninho.com.br',
       language: 'Java',
     },
     {
-      name: 'Repositorie 1',
+      name: 'Repositorie 5',
       description: 'Descrição',
       html_url: 'https://devjuninho.com.br',
       language: 'Ruby',
     },
     {
-      name: 'Repositorie 1',
+      name: 'Repositorie 6',
       description: 'Descrição',
       html_url: 'https://devjuninho.com.br',
-      language: 'Node.Js',
+      language: 'NodeJs',
+    },
+    {
+      name: 'Repositorie 7',
+      description: 'Descrição',
+      html_url: 'https://devjuninho.com.br',
+      language: 'Ruby',
     },
   ];
+
+  const languages = getLangsFrom(repositories);
 
   return (
     <Container>
       <Sidebar>
         <Profile user={user} />
-        <Filter />
+        <Filter languages={languages} />
       </Sidebar>
       <Main>
         <Repositories />
