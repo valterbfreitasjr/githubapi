@@ -20,36 +20,42 @@ const RepositoriesPage = () => {
 
   const repositories = [
     {
+      id: '1',
       name: 'Repositorie 1',
       description: 'Descrição',
       html_url: 'https://devjuninho.com.br',
       language: 'JavaScript',
     },
     {
+      id: '2',
       name: 'Repositorie 1',
       description: 'Descrição',
       html_url: 'https://devjuninho.com.br',
       language: 'PHP',
     },
     {
+      id: '3',
       name: 'Repositorie 1',
       description: 'Descrição',
       html_url: 'https://devjuninho.com.br',
       language: 'C#',
     },
     {
+      id: '4',
       name: 'Repositorie 1',
       description: 'Descrição',
       html_url: 'https://devjuninho.com.br',
       language: 'Java',
     },
     {
+      id: '5',
       name: 'Repositorie 1',
       description: 'Descrição',
       html_url: 'https://devjuninho.com.br',
       language: 'Ruby',
     },
     {
+      id: '6',
       name: 'Repositorie 1',
       description: 'Descrição',
       html_url: 'https://devjuninho.com.br',
@@ -64,7 +70,7 @@ const RepositoriesPage = () => {
         <Filter />
       </Sidebar>
       <Main>
-        <Repositories />
+        <Repositories repositories={repositories} />
       </Main>
     </Container>
   );
