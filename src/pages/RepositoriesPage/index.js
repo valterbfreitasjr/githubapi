@@ -1,26 +1,40 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import Profile from './Profile';
 import Filter from './Filter';
 import Repositories from './Repositories';
 
-import { Container, Sidebar, Main } from './styles';
+import { Container, Sidebar, Main, Loading } from './styles';
 
-import { getLangsFrom } from '../../services/api';
+import { getUser, getLangsFrom } from '../../services/api';
 
 const RepositoriesPage = () => {
+  const [user, setUser] = useState();
   const [currentLanguage, setCurrentLanguage] = useState();
+  const [loading, setLoading] = useState(true);
 
-  const user = {
-    login: 'valterbfreitasjr',
-    avatar_url: 'https://avatars.githubusercontent.com/u/97262966?v=4',
-    name: 'Valter B. Freitas Jr',
-    followers: 0,
-    following: 0,
-    company: null,
-    blog: 'https://devjuninho.com.br',
-    location: 'Santo Anastácio - SP',
-  };
+  useEffect(() => {
+    const loadData = async () => {
+      // userResponse = getUser('valterbfreitasjr');
+
+      const [userResponse] = await Promise.all([getUser('valterbfreitasjr')]);
+
+      setUser(userResponse.data);
+      setLoading(false);
+    };
+    loadData();
+  }, []);
+
+  // const user = {
+  //   login: 'valterbfreitasjr',
+  //   avatar_url: 'https://avatars.githubusercontent.com/u/97262966?v=4',
+  //   name: 'Valter B. Freitas Jr',
+  //   followers: 0,
+  //   following: 0,
+  //   company: null,
+  //   blog: 'https://devjuninho.com.br',
+  //   location: 'Santo Anastácio - SP',
+  // };
 
   const repositories = [
     {
@@ -78,6 +92,10 @@ const RepositoriesPage = () => {
   const onFilterClick = (language) => {
     setCurrentLanguage(language);
   };
+
+  if (loading) {
+    return <Loading>Carregando...</Loading>;
+  }
 
   return (
     <Container>
