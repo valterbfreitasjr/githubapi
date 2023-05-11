@@ -16,8 +16,8 @@ const Repository = ({ repository }) => {
       <Description>{repository.description}</Description>
       <Footer color={color}>
         <Lang>{repository.language}</Lang>
-        <Link href={repository.url_html} target="_blank">
-          DevJuninho
+        <Link href={repository.html_url} target="_blank">
+          Ver
         </Link>
       </Footer>
     </Container>
@@ -28,7 +28,7 @@ Repository.propTypes = {
     id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
-    url_html: PropTypes.string.isRequired,
+    html_url: PropTypes.string.isRequired,
     language: PropTypes.string,
   }).isRequired,
 };
